@@ -1,0 +1,14 @@
+# IDEA
+*.iml
+.idea
+.DS_Store
+.log
+.lck
+
+.settings
+.project
+target
+src/test
+transaction-logs
+log
+*.log

@@ -1,0 +1,7 @@
+server:
+  port: 8085
+spring:
+  devtools:
+    livereload:
+      # 配置是否自动重启
+      enabled: true
