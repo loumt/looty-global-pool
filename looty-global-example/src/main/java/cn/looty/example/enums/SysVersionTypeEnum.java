@@ -9,11 +9,9 @@ package cn.looty.example.enums;
  * @Date: 2024-08-02 10:12
  */
 public enum SysVersionTypeEnum {
-    SALARY_SUBSIDY(1, ""),
-    COUNTRY_ENGAGE(2, ""),
-    GROUP_PERSONAL_NATURE(3, ""),
-    SENIORITY_SUBSIDY(4, ""),
-    SALARY_GRADE(4, ""),
+    COUNTRY_ENGAGE(1, "岗位工资调整标准增资对照表"),
+    PROFESSION(2, "基础性绩效工资"),
+    SALARY_GRADE(3, "事业单位管理人员（专技人员）薪级工资调整标准增资对照表"),
     ;
 
 

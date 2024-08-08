@@ -11,6 +11,12 @@
 
     <artifactId>looty-global-api-back</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

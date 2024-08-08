@@ -1,5 +1,8 @@
 package cn.looty.example.models;
 
+import cn.looty.common.enums.YesOrNo;
+import cn.looty.example.common.BaseEntity;
+import cn.looty.example.enums.SysVersionTypeEnum;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -18,28 +21,18 @@ import lombok.Data;
 @ApiModel(description = "版本控制")
 @TableName("sys_version")
 public class SysVersion extends BaseEntity {
-    public static final Integer IS_CURRENT = 1;
-    public static final Integer IS_NOT_CURRENT = 0;
 
-
-    public static final Integer COUNTRY_ENGAGE = 1;//国聘类型
-    public static final Integer SALARY_GRADE = 2;//薪资等级
-    public static final Integer SALARY_SUBSIDY = 3;//基础性工资绩效
-    public static final Integer SENIORITY_SUBSIDY = 4;//工龄补贴
-    public static final Integer GROUP_PERSONAL_NATURE = 5;//群体人员性质
-
+    @ApiModelProperty("id")
+    @TableField
+    private Long id;
     @ApiModelProperty("名")
     @TableField
     private String name;
     @ApiModelProperty("类型")
     @TableField
-    private Integer type;
+    private SysVersionTypeEnum type;
     @ApiModelProperty("当前版本")
     @TableField
-    private Integer isCurrent;
-
-    public boolean isApply(){
-        return this.isCurrent!= null && this.isCurrent == 1;
-    }
+    private YesOrNo isCurrent;
 
 }

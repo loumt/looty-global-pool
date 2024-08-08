@@ -2,6 +2,9 @@ package cn.looty.example.handlers;
 
 
 import cn.looty.example.enums.SysVersionTypeEnum;
+import com.google.common.collect.Maps;
+
+import java.util.Map;
 
 /**
  * @Filename: SysVersionServiceStrategyFactory
@@ -12,11 +15,11 @@ import cn.looty.example.enums.SysVersionTypeEnum;
  * @Date: 2024-07-30 13:23
  */
 public class SysVersionServiceStrategyFactory {
-    private static Map<SysVersionTypeEnum, SysVersionService> maps = Maps.newConcurrentMap();
-    public static SysVersionService getByType(SysVersionTypeEnum type){
+    private static Map<SysVersionTypeEnum, SysVersionAbstractService> maps = Maps.newConcurrentMap();
+    public static SysVersionAbstractService getByType(SysVersionTypeEnum type){
         return maps.get(type);
     }
-    public static void register(SysVersionTypeEnum type, SysVersionService service){
+    public static void register(SysVersionTypeEnum type, SysVersionAbstractService service){
         maps.put(type, service);
     }
 }

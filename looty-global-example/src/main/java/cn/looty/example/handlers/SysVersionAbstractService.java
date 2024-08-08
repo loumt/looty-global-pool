@@ -3,7 +3,6 @@ package cn.looty.example.handlers;
 import cn.looty.example.annotations.SysVersionTypeHandler;
 import cn.looty.example.enums.SysVersionTypeEnum;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @Filename: SysVersionAbstractService
@@ -13,16 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Email: LouMT@orz.com
  * @Date: 2024-07-30 16:26
  */
-public abstract class SysVersionAbstractService implements SysVersionService, InitializingBean {
-    @Autowired
-    private SysVersionMapper versionMapper;
+public abstract class SysVersionAbstractService implements InitializingBean {
+
+    //注入service做业务逻辑
 
     protected SysVersionTypeEnum getType() {
         return this.getClass().getAnnotation(SysVersionTypeHandler.class).type();
-    }
-
-    protected String getTableName() {
-        return this.getClass().getAnnotation(SysVersionTypeHandler.class).tableName();
     }
 
     @Override
@@ -30,22 +25,23 @@ public abstract class SysVersionAbstractService implements SysVersionService, In
         SysVersionServiceStrategyFactory.register(getType(), this);
     }
 
-    public SysVersion checkVersion(Long id) {
-        SysVersion version = versionMapper.selectById(id);
-        if (version == null) throw new SalaryBusinessException(ResultCode.SALARY_VERSION_NOT_FOUND);
-        return version;
+    public void valid(Long id) {
+        //校验
     }
 
-    protected abstract void removeVersionDetail(Long id);
-    public final void safeRemoveVersionDetail(Long versionId, Long dataId) {
+    //实际实现的业务逻辑
+    protected abstract void businessDoSomething(Long id);
+
+    //外部调用
+    public final void exec(Long versionId, Long dataId) {
         /**
          * 验证版本是否还在
          */
-        checkVersion(versionId);
+        valid(versionId);
 
         /**
-         * 删除
+         * 业务
          */
-        removeVersionDetail(dataId);
+        businessDoSomething(dataId);
     }
 }
