@@ -1,5 +1,6 @@
 package cn.looty.common.result;
 
+import cn.looty.common.enums.ResultCode;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -28,5 +29,14 @@ public class ResultData<T> implements Serializable {
     /**
      * 数据
      */
-    private T t;
+    private T data;
+
+    public ResultData(ResultCode code) {
+        this.code = code.getCode();
+        this.msg = code.getMessage();
+    }
+
+    public static ResultData of(ResultCode code) {
+        return new ResultData(code);
+    }
 }

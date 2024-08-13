@@ -58,6 +58,14 @@
             <version>2.2.1</version>
         </dependency>
 
+        <!--本地jar文件-->
+        <dependency>
+            <groupId>com.spire</groupId>
+            <artifactId>spire.presentation</artifactId>
+            <scope>system</scope>
+            <version>5.1.0</version>
+            <systemPath>${project.basedir}/lib/Spire.Presentation.jar</systemPath>
+        </dependency>
 
 
     </dependencies>
