@@ -8,8 +8,8 @@ package cn.looty.common.enums;
  * @Date 2024/8/8 23:25
  */
 public enum ResultCode {
-    SUCCESS(100000, "Success"),
-    FAILURE(500000, "Failure");
+    SUCCESS(100000, "成功"),
+    FAILURE(500000, "系统错误");
 
     private Integer code;
     private String message;

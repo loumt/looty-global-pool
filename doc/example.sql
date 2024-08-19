@@ -1,10 +1,4 @@
 
--- 人员类型（报告人、非报告人，默认为：非报告人）
-ALTER TABLE base_meeting_reg_record ADD COLUMN `type` TINYINT(1) DEFAULT '0' COMMENT '人员类型, 0非报告人 1报告人';
--- 交通方式（编辑框，提示：飞机（航班号）；火车（车次+到达嘉兴时间））
-ALTER TABLE base_meeting_reg_record ADD COLUMN `trans` varchar(128) DEFAULT NULL COMMENT '交通方式';
-ALTER TABLE base_meeting_reg_record ADD COLUMN `sign_time` datetime DEFAULT NULL COMMENT '签到时间';
-
 
 DROP TABLE IF EXISTS `base_meeting_hotel`;
 CREATE TABLE `base_meeting_hotel` (
