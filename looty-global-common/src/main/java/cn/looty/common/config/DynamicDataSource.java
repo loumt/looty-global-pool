@@ -1,6 +1,7 @@
-package cn.looty.back.config;
+package cn.looty.common.config;
 
 
+import cn.looty.common.utils.DynamicDataSourceContextHolder;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import javax.sql.DataSource;

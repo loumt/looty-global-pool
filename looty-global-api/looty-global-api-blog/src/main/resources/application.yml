@@ -5,3 +5,10 @@ spring:
     livereload:
       # 配置是否自动重启
       enabled: true
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 10MB
+      # 设置总上传的文件大小
+      max-request-size:  20MB

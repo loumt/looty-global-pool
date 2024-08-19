@@ -1,4 +1,4 @@
-package cn.looty.back.config;
+package cn.looty.srv.user.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;

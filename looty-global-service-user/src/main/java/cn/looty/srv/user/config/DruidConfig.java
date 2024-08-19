@@ -1,5 +1,6 @@
-package cn.looty.back.config;
+package cn.looty.srv.user.config;
 
+import cn.looty.common.config.DynamicDataSource;
 import cn.looty.common.enums.DataSourceType;
 import cn.looty.common.utils.SpringUtils;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -91,7 +92,7 @@ public class DruidConfig
         Filter filter = new Filter()
         {
             @Override
-            public void init(javax.servlet.FilterConfig filterConfig) throws ServletException
+            public void init(FilterConfig filterConfig) throws ServletException
             {
             }
 

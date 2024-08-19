@@ -22,7 +22,6 @@ import springfox.documentation.spring.web.plugins.Docket;
  * @Email: looty_loumt@hotmail.com
  * @Date: 2024-08-13 16:08
  */
-
 @Configuration
 @EnableOpenApi
 public class SwaggerConfig

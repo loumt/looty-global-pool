@@ -1,4 +1,4 @@
-package cn.looty.back.config;
+package cn.looty.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
