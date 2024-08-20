@@ -36,7 +36,17 @@ public class ResultData<T> implements Serializable {
         this.msg = code.getMessage();
     }
 
+    public ResultData(ResultCode code, T data) {
+        this.code = code.getCode();
+        this.msg = code.getMessage();
+        this.data = data;
+    }
+
     public static ResultData of(ResultCode code) {
         return new ResultData(code);
+    }
+
+    public static <T> ResultData of(ResultCode code, T data) {
+        return new ResultData(code, data);
     }
 }

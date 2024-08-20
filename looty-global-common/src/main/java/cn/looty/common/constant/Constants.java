@@ -23,4 +23,14 @@ public class Constants
      * 系统语言
      */
     public static final Locale DEFAULT_LOCALE = Locale.SIMPLIFIED_CHINESE;
+
+    /**
+     * HTTP
+     */
+    public static final String HTTP = "http://";
+
+    /**
+     * HTTPS
+     */
+    public static final String HTTPS = "https://";
 }

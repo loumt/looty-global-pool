@@ -1,6 +1,7 @@
 package cn.looty.blog;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @Filename: BlogApplication
@@ -10,6 +11,7 @@ import org.springframework.boot.SpringApplication;
  * @Email: LouMT@orz.com
  * @Date: 2024-07-25 16:48
  */
+@SpringBootApplication
 public class BlogApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);

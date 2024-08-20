@@ -1,0 +1,25 @@
+dubbo:
+  application:
+    name: looty-user-provider
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  consumer:
+    timeout: 10000
+
+spring:
+  profiles:
+    include: druid
+mybatis-plus:
+  configuration:
+    database-id: id
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: true
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: cn.looty.srv.user.service.model

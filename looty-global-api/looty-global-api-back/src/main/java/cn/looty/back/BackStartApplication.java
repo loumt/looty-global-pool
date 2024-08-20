@@ -2,7 +2,7 @@ package cn.looty.back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
 
 /**
  * @Filename: BackStartApplication
@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @Email: looty_loumt@hotmail.com
  * @Date: 2024-08-13 14:44
  */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 public class BackStartApplication {
     public static void main(String[] args) {
         SpringApplication.run(BackStartApplication.class, args);

@@ -21,5 +21,4 @@ public class ChartController extends BaseController {
     public ResultData test(){
         return success();
     }
-
 }

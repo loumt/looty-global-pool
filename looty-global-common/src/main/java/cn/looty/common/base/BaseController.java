@@ -14,8 +14,12 @@ import cn.looty.common.result.ResultData;
 public abstract class BaseController {
 
 
-    protected ResultData success(){
+    protected ResultData success() {
         return ResultData.of(ResultCode.SUCCESS);
+    }
+
+    protected ResultData success(Object data) {
+        return ResultData.of(ResultCode.SUCCESS, data);
     }
 
 }

@@ -1,7 +1,6 @@
-package cn.looty.srv.user.service.impl;
+package cn.looty.srv.user.service;
 
 import cn.looty.common.base.BaseService;
-import cn.looty.srv.user.service.IUserService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
@@ -13,5 +12,8 @@ import org.apache.dubbo.config.annotation.DubboService;
  */
 @DubboService(interfaceClass = IUserService.class)
 public class UserServiceImpl extends BaseService implements IUserService{
-
+    @Override
+    public String welcome(String name) {
+        return "WelCome " + name;
+    }
 }

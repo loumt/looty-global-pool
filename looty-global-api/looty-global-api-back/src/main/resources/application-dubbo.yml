@@ -1,0 +1,13 @@
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    id: zookeeper
+  protocol:
+    name: dubbo
+    id: dubbo
+    port: 20890
+  application:
+    id: back-customer
+    name: back-customer
+  consumer:
+    check: true

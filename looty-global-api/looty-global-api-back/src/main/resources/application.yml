@@ -6,11 +6,10 @@ project:
 server:
   port: 8888
 
+
 spring:
   devtools:
     add-properties: true
-  profiles:
-    active: druid
 
 swagger:
   enabled: true

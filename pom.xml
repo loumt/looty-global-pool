@@ -87,6 +87,12 @@
                 <version>${curator.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>3.6.4</version>
+            </dependency>
+
             <!--excel工具-->
             <dependency>
                 <groupId>org.apache.poi</groupId>
@@ -157,6 +163,7 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.1.0</version>
             </dependency>
+
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -178,7 +185,8 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.30</version>
+                <version>1.18.24</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -193,6 +201,14 @@
                 <version>2.0.9</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+                <scope>provided</scope>
+            </dependency>
+
             <dependency>
                 <groupId>cn.looty</groupId>
                 <artifactId>looty-global-common</artifactId>
@@ -203,16 +219,29 @@
                 <artifactId>looty-global-tool</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.looty</groupId>
+                <artifactId>looty-global-service-user</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.looty</groupId>
+                <artifactId>looty-global-service-article</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
-        <module>looty-global-common</module>
         <module>looty-global-api</module>
+        <module>looty-global-common</module>
         <module>looty-global-tool</module>
         <module>looty-global-example</module>
         <module>looty-global-service-user</module>
+        <module>looty-global-service-user-impl</module>
         <module>looty-global-service-article</module>
+        <module>looty-global-service-article-impl</module>
     </modules>
 
     <dependencies>

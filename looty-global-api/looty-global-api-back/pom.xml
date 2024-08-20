@@ -15,10 +15,15 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <looty.common>1.0.0-SNAPSHOT</looty.common>
     </properties>
 
     <dependencies>
+        <!-- SpringBoot容器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
         <!-- SpringBoot Web容器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,9 +53,15 @@
             <artifactId>swagger-models</artifactId>
         </dependency>
 
+
         <dependency>
             <groupId>cn.looty</groupId>
             <artifactId>looty-global-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.looty</groupId>
+            <artifactId>looty-global-service-user</artifactId>
         </dependency>
     </dependencies>
 
@@ -61,6 +72,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
+                    <mainClass>cn.looty.back.BackStartApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -75,6 +87,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>${project.artifactId}</warName>
+                </configuration>
             </plugin>
         </plugins>
     </build>

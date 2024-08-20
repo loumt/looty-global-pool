@@ -10,7 +10,7 @@ import java.util.*;
  * 
  * @author ruoyi
  */
-public class StringUtils extends org.apache.commons.lang3.StringUtils
+public class StringUtil extends org.apache.commons.lang3.StringUtils
 {
     /** 空字符串 */
     private static final String NULLSTR = "";
@@ -289,7 +289,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
      */
     public static boolean ishttp(String link)
     {
-        return StringUtils.startsWithAny(link, Constants.HTTP, Constants.HTTPS);
+        return StringUtil.startsWithAny(link, Constants.HTTP, Constants.HTTPS);
     }
 
     /**
@@ -316,20 +316,20 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     public static final List<String> str2List(String str, String sep, boolean filterBlank, boolean trim)
     {
         List<String> list = new ArrayList<String>();
-        if (StringUtils.isEmpty(str))
+        if (StringUtil.isEmpty(str))
         {
             return list;
         }
 
         // 过滤空白字符串
-        if (filterBlank && StringUtils.isBlank(str))
+        if (filterBlank && StringUtil.isBlank(str))
         {
             return list;
         }
         String[] split = str.split(sep);
         for (String string : split)
         {
-            if (filterBlank && StringUtils.isBlank(string))
+            if (filterBlank && StringUtil.isBlank(string))
             {
                 continue;
             }
@@ -472,7 +472,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
      */
     public static String lastStringDel(String str, String spit)
     {
-        if (!StringUtils.isEmpty(str) && str.endsWith(spit))
+        if (!StringUtil.isEmpty(str) && str.endsWith(spit))
         {
             return str.subSequence(0, str.length() - 1).toString();
         }
