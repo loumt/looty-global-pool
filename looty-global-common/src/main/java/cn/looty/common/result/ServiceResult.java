@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Filename: ResultData
+ * @Filename: ServiceResult
  * @Description: 返回数据
  * @Version: 1.0.0
  * @Author: louMT
@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @Date: 2024-07-25 16:20
  */
 @Data
-public class ResultData<T> implements Serializable {
+public class ServiceResult<T> implements Serializable {
     private static final long serialVersionUID = -1204002577294901112L;
     /**
      * 业务Code
@@ -31,22 +31,22 @@ public class ResultData<T> implements Serializable {
      */
     private T data;
 
-    public ResultData(ResultCode code) {
+    public ServiceResult(ResultCode code) {
         this.code = code.getCode();
         this.msg = code.getMessage();
     }
 
-    public ResultData(ResultCode code, T data) {
+    public ServiceResult(ResultCode code, T data) {
         this.code = code.getCode();
         this.msg = code.getMessage();
         this.data = data;
     }
 
-    public static ResultData of(ResultCode code) {
-        return new ResultData(code);
+    public static ServiceResult of(ResultCode code) {
+        return new ServiceResult(code);
     }
 
-    public static <T> ResultData of(ResultCode code, T data) {
-        return new ResultData(code, data);
+    public static <T> ServiceResult of(ResultCode code, T data) {
+        return new ServiceResult(code, data);
     }
 }

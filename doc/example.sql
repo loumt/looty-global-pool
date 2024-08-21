@@ -1,5 +1,19 @@
 
 
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `meeting_id` bigint(20) NOT NULL COMMENT '酒店ID',
+  `name` varchar(128) NOT NULL COMMENT '酒店名称',
+  `address` varchar(64) NOT NULL COMMENT '酒店地址',
+  `add_user_id` bigint(20) NOT NULL COMMENT '提交用户ID',
+  `del` int(11) NOT NULL DEFAULT '0' COMMENT '是否已删除[0:未删除、1:已删除]',
+  `add_time` datetime NOT NULL COMMENT '创建时间',
+  `up_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='会议酒店信息表';
+
+
 DROP TABLE IF EXISTS `base_meeting_hotel`;
 CREATE TABLE `base_meeting_hotel` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',

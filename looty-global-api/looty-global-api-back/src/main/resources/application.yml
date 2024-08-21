@@ -1,15 +1,9 @@
-#项目信息
-project:
-  name: Looty
-  version: v1.0.0
-
 server:
   port: 8888
 
-
 spring:
+  config:
+    import: classpath:application-dubbo.yml,classpath:application-project.yml
   devtools:
     add-properties: true
 
-swagger:
-  enabled: true

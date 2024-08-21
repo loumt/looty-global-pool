@@ -28,8 +28,8 @@
         <mail.version>1.4.7</mail.version>
         <swagger.version>3.0.0</swagger.version>
         <commons.io.version>2.16.1</commons.io.version>
-        <dubbo.version>2.7.8</dubbo.version>
-        <curator.version>4.3.0</curator.version>
+        <dubbo.version>3.2.15</dubbo.version>
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
     </properties>
 
     <!--在Maven中dependencyManagement的作用其实相当于一个对所依赖jar包进行版本管理的管理器。-->
@@ -68,30 +68,23 @@
                 <version>${druid.version}</version>
             </dependency>
 
-            <!-- Spring Boot Starter for Dubbo -->
+            <!-- Dubbo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <artifactId>dubbo-bom</artifactId>
                 <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
-            <!-- Zookeeper client via Curator -->
+            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-dependencies-zookeeper-curator5 -->
             <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-framework</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-recipes</artifactId>
-                <version>${curator.version}</version>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
 
-            <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>3.6.4</version>
-            </dependency>
 
             <!--excel工具-->
             <dependency>
@@ -161,7 +154,12 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.1.0</version>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
 
             <dependency>
@@ -201,10 +199,11 @@
                 <version>20.0</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>2.0.9</version>
+                <version>1.7.36</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
@@ -254,18 +253,25 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>3.2.8</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <repositories>

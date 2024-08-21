@@ -1,13 +1,9 @@
 dubbo:
-  registry:
-    address: zookeeper://127.0.0.1:2181
-    id: zookeeper
+  application:
+    name: dubbo-${project.name}-customer
+    qos-enable: false
   protocol:
     name: dubbo
-    id: dubbo
-    port: 20890
-  application:
-    id: back-customer
-    name: back-customer
-  consumer:
-    check: true
+    port: -1
+  registry:
+    address: zookeeper://${zookeeper.address:127.0.0.1}:2181

@@ -1,5 +1,6 @@
 package cn.looty.back;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2024-08-13 14:44
  */
 @SpringBootApplication
+@EnableDubbo
 public class BackStartApplication {
     public static void main(String[] args) {
         SpringApplication.run(BackStartApplication.class, args);

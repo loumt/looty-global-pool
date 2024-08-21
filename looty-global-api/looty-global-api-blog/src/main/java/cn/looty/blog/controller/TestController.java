@@ -3,7 +3,7 @@ package cn.looty.blog.controller;
 import cn.looty.blog.model.ExportExample;
 import cn.looty.common.enums.ExportTypeEnum;
 import cn.looty.common.enums.ResultCode;
-import cn.looty.common.result.ResultData;
+import cn.looty.common.result.ServiceResult;
 import cn.looty.common.utils.CommonExportExcelUtil;
 import cn.looty.common.utils.ExportExcelUtil;
 import com.google.common.collect.Lists;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,8 +27,8 @@ import java.util.List;
 @RequestMapping("/api/test")
 public class TestController {
     @GetMapping
-    public ResultData test() {
-        return ResultData.of(ResultCode.SUCCESS);
+    public ServiceResult test() {
+        return ServiceResult.of(ResultCode.SUCCESS);
     }
 
     @GetMapping("/export")

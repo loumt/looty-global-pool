@@ -1,7 +1,7 @@
 package cn.looty.common.base;
 
 import cn.looty.common.enums.ResultCode;
-import cn.looty.common.result.ResultData;
+import cn.looty.common.result.ServiceResult;
 
 /**
  * @Filename: BaseController
@@ -14,12 +14,12 @@ import cn.looty.common.result.ResultData;
 public abstract class BaseController {
 
 
-    protected ResultData success() {
-        return ResultData.of(ResultCode.SUCCESS);
+    protected ServiceResult success() {
+        return ServiceResult.of(ResultCode.SUCCESS);
     }
 
-    protected ResultData success(Object data) {
-        return ResultData.of(ResultCode.SUCCESS, data);
+    protected ServiceResult success(Object data) {
+        return ServiceResult.of(ResultCode.SUCCESS, data);
     }
 
 }

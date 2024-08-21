@@ -1,8 +1,5 @@
 package cn.looty.srv.user.service;
 
-import cn.looty.srv.user.model.User;
-import com.baomidou.mybatisplus.extension.service.IService;
-
 /**
  * @Filename: IUserService
  * @Description:

@@ -1,6 +1,7 @@
 package cn.looty.srv.user;
 
 import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2024/8/19 22:23
  */
 @SpringBootApplication
-@DubboComponentScan(basePackages = {"cn.looty.srv.user"})
+@EnableDubbo
 public class UserServiceApplication {
     public static void main(String[] args) {
         SpringApplication userServiceProviderApplication = new SpringApplication(UserServiceApplication.class);

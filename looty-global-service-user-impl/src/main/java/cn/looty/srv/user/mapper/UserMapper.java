@@ -1,6 +1,6 @@
 package cn.looty.srv.user.mapper;
 
-import cn.looty.srv.user.model.User;
+import cn.looty.srv.user.model.SysUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date: 2024-08-20 14:40
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<SysUser> {
 }
