@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @Filename: UserMapper
+ * @Filename: SysUserMapper
  * @Description:
  * @Version: 1.0
  * @Author: louMT
@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date: 2024-08-20 14:40
  */
 @Mapper
-public interface UserMapper extends BaseMapper<SysUser> {
+public interface SysUserMapper extends BaseMapper<SysUser> {
 }

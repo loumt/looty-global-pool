@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -23,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @Aspect
-public class ServiceLogAspect {
+public class ServiceLogAspect  {
     private static final Long TIME_OUT_REMIND_SETTING = TimeUnit.SECONDS.toMillis(1);
     final static Logger logger = LoggerFactory.getLogger(ServiceLogAspect.class);
     private static ThreadLocal<Long> startTimeThreadLocal = new ThreadLocal<Long>();

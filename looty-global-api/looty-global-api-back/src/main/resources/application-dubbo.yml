@@ -2,6 +2,7 @@ dubbo:
   application:
     name: dubbo-${project.name}-customer
     qos-enable: false
+    enable-file-cache: false
   protocol:
     name: dubbo
     port: -1

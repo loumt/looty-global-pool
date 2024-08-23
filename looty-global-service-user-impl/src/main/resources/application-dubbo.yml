@@ -1,6 +1,9 @@
 dubbo:
   application:
     name: dubbo-looty-user-provider
+    enable-file-cache: false
+    qos-enable: false
+    check-serializable: true
   protocol:
     name: dubbo
     port: -1

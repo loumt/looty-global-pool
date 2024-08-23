@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -15,7 +16,8 @@ import java.util.Date;
  * @Date 2024/8/8 23:11
  */
 @Data
-public abstract class BaseModel {
+public abstract class BaseModel implements Serializable {
+    private static final long serialVersionUID = -1L;
     @ApiModelProperty(value = "主键ID")
     @TableId
     private Long id;

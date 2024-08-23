@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Email: looty_loumt@hotmail.com
  * @Date: 2024-08-13 14:44
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"cn.looty.back", "cn.looty.common"})
 @EnableDubbo
 public class BackStartApplication {
     public static void main(String[] args) {
