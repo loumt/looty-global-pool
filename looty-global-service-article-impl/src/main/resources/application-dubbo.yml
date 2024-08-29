@@ -1,12 +1,11 @@
 dubbo:
   application:
-    name: dubbo-${project.name}-customer
-    qos-enable: false
+    name: dubbo-looty-article-provider
     enable-file-cache: false
+    qos-enable: false
+    check-serializable: true
   protocol:
     name: dubbo
     port: -1
   registry:
     address: zookeeper://${zookeeper.address:127.0.0.1}:2181
-  consumer:
-    check: false

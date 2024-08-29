@@ -1,0 +1,4 @@
+spring:
+  config:
+    import: classpath:application-dubbo.yml,classpath:application-druid.yml,classpath:application-mybatis.yml
+

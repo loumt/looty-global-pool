@@ -214,6 +214,21 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/javax.el/javax.el-api -->
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.glassfish/javax.el -->
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+
             <!--Dubbo 默认支持 hibernate-validator 版本 <=6.x，若使用 hibernate-validator 7.x 版本，请将 validation 参数声明为 jvalidationNew-->
             <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
             <dependency>

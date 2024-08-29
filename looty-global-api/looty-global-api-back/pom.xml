@@ -58,12 +58,6 @@
             </exclusions>
         </dependency>
 
-        <!-- 防止进入swagger页面报类型转换错误，排除3.0.0中的引用，手动增加1.6.2版本 -->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>cn.looty</groupId>
             <artifactId>looty-global-common</artifactId>
@@ -72,6 +66,11 @@
         <dependency>
             <groupId>cn.looty</groupId>
             <artifactId>looty-global-service-user</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.looty</groupId>
+            <artifactId>looty-global-service-article</artifactId>
         </dependency>
     </dependencies>
 
