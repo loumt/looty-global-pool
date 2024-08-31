@@ -26,7 +26,6 @@ public class ArticleController extends BaseController {
         return success(blogService.page(to));
     }
 
-
     @PostMapping
     public ApiResult save(@RequestBody Blog blog){
         return success(blogService.add(blog));
