@@ -49,7 +49,7 @@ CREATE TABLE `blog` (
 
 
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `blog_category`;
 CREATE TABLE `blog_category` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `user_id` bigint(20) NOT NULL COMMENT '用户ID',
@@ -64,7 +64,7 @@ CREATE TABLE `blog_category` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='博客目录';
 
 
-DROP TABLE IF EXISTS `comment`;
+DROP TABLE IF EXISTS `blog_comment`;
 CREATE TABLE `blog_comment` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `user_id` bigint(20) NOT NULL COMMENT '用户ID',
@@ -79,7 +79,7 @@ CREATE TABLE `blog_comment` (
 
 
 
-DROP TABLE IF EXISTS `up_down`;
+DROP TABLE IF EXISTS `blog_up_down`;
 CREATE TABLE `blog_up_down` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `user_id` bigint(20) NOT NULL COMMENT '用户ID',

@@ -1,7 +1,10 @@
 package cn.looty.srv.article.service;
 
+import cn.looty.common.result.ServiceResult;
 import cn.looty.srv.article.model.Blog;
 import cn.looty.srv.article.model.dto.BlogPageDTO;
+import cn.looty.srv.article.model.vo.BlogVO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.util.List;
 
@@ -14,11 +17,15 @@ import java.util.List;
  */
 public interface IBlogService{
 
-    List<Blog> page(BlogPageDTO to);
+    ServiceResult<BlogVO> detail(Long id);
+
+    ServiceResult<Page<Blog>> page(BlogPageDTO to);
 
     @interface add{};
-    Blog add(Blog blog);
+    ServiceResult<Blog> add(Blog blog);
 
     @interface update{}
-    Blog update(Blog blog);
+    ServiceResult<Blog> update(Blog blog);
+
+    ServiceResult<Blog> delete(Long id);
 }

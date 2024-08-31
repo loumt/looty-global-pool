@@ -1,8 +1,7 @@
 package cn.looty.blog.controller;
 
 import cn.looty.blog.model.ExportExample;
-import cn.looty.common.enums.ExportTypeEnum;
-import cn.looty.common.enums.ResultCode;
+import cn.looty.common.utils.ExportTypeEnum;
 import cn.looty.common.result.ServiceResult;
 import cn.looty.common.utils.CommonExportExcelUtil;
 import cn.looty.common.utils.ExportExcelUtil;
@@ -28,7 +27,7 @@ import java.util.List;
 public class TestController {
     @GetMapping
     public ServiceResult test() {
-        return ServiceResult.of(ResultCode.SUCCESS);
+        return ServiceResult.of();
     }
 
     @GetMapping("/export")

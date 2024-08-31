@@ -1,6 +1,7 @@
 package cn.looty.common.aspect;
 
 import cn.looty.common.result.ServiceResult;
+import org.apache.dubbo.rpc.RpcContext;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +10,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -44,7 +44,10 @@ public class ServiceLogAspect  {
         String methodName = point.getSignature().getName();
         methodNameThreadLocal.set(methodName);
         String args = getArgs(point);
-        logger.info("dubbo服务:{} 函数:{} 参数:{}", className, methodName, args);
+
+        String remoteHost = RpcContext.getServerContext().getRemoteHost();
+
+        logger.info("Remote:{} dubbo服务:{} 函数:{} 参数:{}", remoteHost, className, methodName, args);
     }
 
     @AfterReturning(returning = "result", pointcut = "POINTCUT()")

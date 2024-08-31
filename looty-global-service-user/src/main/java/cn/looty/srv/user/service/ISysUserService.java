@@ -1,6 +1,10 @@
 package cn.looty.srv.user.service;
 
+import cn.looty.common.result.ServiceResult;
 import cn.looty.srv.user.model.SysUser;
+import cn.looty.srv.user.model.dto.SysUserPageDTO;
+import cn.looty.srv.user.model.vo.SysUserVO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -16,18 +20,19 @@ import java.util.List;
  */
 public interface ISysUserService {
 
+    ServiceResult<SysUserVO> detail(Long id);
     /**
      * 系统用户列表
      * @return
      */
-    List<SysUser> list();
+    ServiceResult<Page<SysUser>> page(SysUserPageDTO to);
 
     @interface save{}
-    SysUser save(SysUser user);
+    ServiceResult<SysUser> add(SysUser user);
 
     @interface update{}
-    SysUser update(SysUser user);
+    ServiceResult<SysUser> update(SysUser user);
 
-    boolean delete(@Min(1) @NotNull Long id);
+    ServiceResult<Boolean> delete(Long id);
 
 }

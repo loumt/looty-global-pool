@@ -1,7 +1,9 @@
 package cn.looty.common.base;
 
-import cn.looty.common.enums.ResultCode;
+import cn.looty.common.enums.CommonResultEnum;
+import cn.looty.common.result.ApiResult;
 import cn.looty.common.result.ServiceResult;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @Filename: BaseController
@@ -12,14 +14,27 @@ import cn.looty.common.result.ServiceResult;
  * @Date: 2024-08-13 14:37
  */
 public abstract class BaseController {
-
-
-    protected ServiceResult success() {
-        return ServiceResult.of(ResultCode.SUCCESS);
+    protected ApiResult success() {
+        return new ApiResult(Boolean.TRUE, CommonResultEnum.SUCCESS.getCode(), CommonResultEnum.SUCCESS.getMessage());
     }
 
-    protected ServiceResult success(Object data) {
-        return ServiceResult.of(ResultCode.SUCCESS, data);
+    protected ApiResult auto(ServiceResult rs) {
+        if (rs.getCode() == CommonResultEnum.SUCCESS.getCode()) {
+            return this.success(rs.getData());
+        } else {
+            return this.failure(rs);
+        }
     }
 
+    protected ApiResult failure(ServiceResult result) {
+        return new ApiResult(Boolean.FALSE, result.getCode(), result.getMsg());
+    }
+
+    protected ApiResult failure(CommonResultEnum responseEnum) {
+        return new ApiResult(Boolean.FALSE, responseEnum.getCode(), responseEnum.getMessage());
+    }
+
+    protected ApiResult success(Object data) {
+        return new ApiResult(Boolean.TRUE, CommonResultEnum.SUCCESS.getCode(), CommonResultEnum.SUCCESS.getMessage(), data);
+    }
 }

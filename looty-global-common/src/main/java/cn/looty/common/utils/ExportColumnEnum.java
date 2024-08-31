@@ -1,4 +1,4 @@
-package cn.looty.common.enums;
+package cn.looty.common.utils;
 
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
@@ -16,13 +16,13 @@ public enum ExportColumnEnum {
     private final ExportTypeEnum exportClass;
     private final HorizontalAlignment alignment;
     // 列宽：1-5：正常宽度、其他：5
-    private final int width;
-    private final boolean defaultShow;
-    private final int columnIndex;
+    private final Integer width;
+    private final Boolean defaultShow;
+    private final Integer columnIndex;
 
     ExportColumnEnum(String column, String columnName,
-                     ExportTypeEnum exportClass, HorizontalAlignment alignment,
-                     int width, boolean defaultShow, int columnIndex) {
+                            ExportTypeEnum exportClass, HorizontalAlignment alignment,
+                            int width, boolean defaultShow, int columnIndex) {
         this.column = column;
         this.columnName = columnName;
         this.exportClass = exportClass;
@@ -32,7 +32,7 @@ public enum ExportColumnEnum {
         this.columnIndex = columnIndex;
     }
 
-    public boolean isDefaultShow() {
+    public Boolean isDefaultShow() {
         return defaultShow;
     }
 
@@ -48,7 +48,7 @@ public enum ExportColumnEnum {
         return exportClass;
     }
 
-    public int toWidth() {
+    public Integer toWidth() {
         if (this.width == 8) {
             return 8000;
         } else if (this.width <= 0) {
@@ -67,5 +67,6 @@ public enum ExportColumnEnum {
     public Integer getColumnIndex() {
         return columnIndex;
     }
+
 
 }

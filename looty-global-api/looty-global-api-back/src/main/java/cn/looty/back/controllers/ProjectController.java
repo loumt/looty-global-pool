@@ -2,6 +2,7 @@ package cn.looty.back.controllers;
 
 import cn.looty.common.base.BaseController;
 import cn.looty.common.config.ProjectConfig;
+import cn.looty.common.result.ApiResult;
 import cn.looty.common.result.ServiceResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class ProjectController extends BaseController {
     private ProjectConfig projectConfig;
 
     @GetMapping
-    public ServiceResult project(){
+    public ApiResult project(){
         return success(projectConfig);
     }
 }

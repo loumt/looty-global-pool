@@ -1,8 +1,7 @@
 package cn.looty.common.utils;
 
-import cn.looty.common.enums.ExportColumnEnum;
-import cn.looty.common.enums.ExportTypeEnum;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.slf4j.Logger;
@@ -81,7 +80,7 @@ public class ExportExcelUtil {
             //创建一个WorkBook,对应一个Excel文件
             HSSFWorkbook wb = new HSSFWorkbook();
             //在Workbook中，创建一个sheet，对应Excel中的工作薄（sheet）
-            HSSFSheet sheet = wb.createSheet(exportType.toSheetName());
+            HSSFSheet sheet = wb.createSheet(exportType.getSheetName());
             HSSFFont boldFont = wb.createFont();
             boldFont.setBold(true);
 

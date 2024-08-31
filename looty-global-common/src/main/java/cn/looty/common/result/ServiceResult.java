@@ -1,6 +1,7 @@
 package cn.looty.common.result;
 
-import cn.looty.common.enums.ResultCode;
+import cn.looty.common.base.BaseResultEnum;
+import cn.looty.common.enums.CommonResultEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -31,22 +32,31 @@ public class ServiceResult<T> implements Serializable {
      */
     private T data;
 
-    public ServiceResult(ResultCode code) {
-        this.code = code.getCode();
-        this.msg = code.getMessage();
+    public ServiceResult() {
+        this.code = CommonResultEnum.SUCCESS.getCode();
+        this.msg = CommonResultEnum.SUCCESS.getMessage();
     }
 
-    public ServiceResult(ResultCode code, T data) {
-        this.code = code.getCode();
-        this.msg = code.getMessage();
+    public <E extends BaseResultEnum> ServiceResult(E enumCode) {
+        this.code = enumCode.getCode();
+        this.msg = enumCode.getMessage();
+    }
+
+    public <E extends BaseResultEnum> ServiceResult(E enumCode, T data) {
+        this.code = enumCode.getCode();
+        this.msg = enumCode.getMessage();
         this.data = data;
     }
 
-    public static ServiceResult of(ResultCode code) {
-        return new ServiceResult(code);
+    public static ServiceResult of() {
+        return new ServiceResult();
     }
 
-    public static <T> ServiceResult of(ResultCode code, T data) {
-        return new ServiceResult(code, data);
+    public static <E extends BaseResultEnum> ServiceResult of(E enumCode) {
+        return new ServiceResult(enumCode);
+    }
+
+    public static <E extends BaseResultEnum, T> ServiceResult of(E enumCode, T data) {
+        return new ServiceResult(enumCode, data);
     }
 }
