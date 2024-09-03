@@ -1,0 +1,24 @@
+{
+  "name": "looty-global-web-back",
+  "version": "1.0.0",
+  "author": "Looty",
+  "email": "looty_loumt@hotmail.com",
+  "type": "module",
+  "description": "Looty Global Back Web",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "element-plus": "^2.7.6",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.4.2"
+  }
+}
