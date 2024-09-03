@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api/article")
-public class ArticleController extends BaseController {
+public class BlogController extends BaseController {
     @DubboReference
     private IBlogService blogService;
 
@@ -30,7 +30,6 @@ public class ArticleController extends BaseController {
     public ApiResult save(@RequestBody Blog blog){
         return success(blogService.add(blog));
     }
-
 
     @PutMapping
     public ApiResult update(@RequestBody Blog blog){

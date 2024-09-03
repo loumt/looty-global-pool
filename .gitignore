@@ -12,3 +12,6 @@ src/test
 transaction-logs
 log
 *.log
+
+node_modules
+package-lock.json
