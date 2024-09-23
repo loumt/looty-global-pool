@@ -6,6 +6,7 @@
   "type": "module",
   "description": "Looty Global Back Web",
   "scripts": {
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
@@ -13,12 +14,17 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@element-plus/icons-vue": "2.3.1",
     "element-plus": "^2.7.6",
+    "pinia": "^2.2.2",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "^1.79.3",
+    "sass-embedded": "^1.79.3",
+    "unplugin-auto-import": "^0.18.3",
     "vite": "^5.4.2"
   }
 }

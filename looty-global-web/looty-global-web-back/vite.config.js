@@ -1,21 +1,24 @@
-import {defineConfig} from 'vite'
-import path from 'path'
-import vue from '@vitejs/plugin-vue';
+import {defineConfig, loadEnv} from 'vite'
+import viteBaseConfig from './vite.base.config'
+import viteDevConfig from './vite.dev.config'
+import viteProdConfig from './vite.prod.config'
 
-export default defineConfig(({}) => {
-    return {
-        plugins: [vue()],
-        resolve: {
-            alias: {
-                // ÉèÖÃÂ·¾¶
-                '~': path.resolve(__dirname, './'),
-                // ÉèÖÃ±ðÃû
-                '@': path.resolve(__dirname, './src')
-            },
-            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
-        },
-        server:{
-            port: 80
-        }
+const envResolver = {
+    'build': () => {
+        console.log("ç”Ÿäº§çŽ¯å¢ƒ")
+        return ({...viteBaseConfig, ...viteProdConfig});
+    },
+    'serve': () => {
+        console.log("å¼€å‘çŽ¯å¢ƒ");
+        return ({...viteBaseConfig, ...viteDevConfig});
     }
+}
+
+export default defineConfig(({command, mode}) => {
+    console.log("command = ", command);
+    console.log("mode = ", mode)
+    const env = loadEnv(mode, process.cwd(), "")
+    // console.log("env///", env)
+
+    return envResolver[command]();
 })

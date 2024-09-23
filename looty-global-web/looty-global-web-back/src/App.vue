@@ -1,7 +1,3 @@
 <template>
-    APP.VUE
+    <router-view/>
 </template>
-
-<script setup>
-
-</script>
