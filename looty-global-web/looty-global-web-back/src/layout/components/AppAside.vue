@@ -7,20 +7,39 @@
                 <h1>管理后台</h1>
             </a>
 
-            <el-sub-menu index="1">
+
+            <el-menu-item index="/index">
+                <el-icon><User /></el-icon> <span>首页统计</span>
+            </el-menu-item>
+
+            <el-sub-menu index="ARTICLE">
+                <template #title>
+                    <el-icon><User /></el-icon> <span>文章管理</span>
+                </template>
+
+                <el-menu-item index="/article/article">
+                    <el-icon><User /></el-icon> <span>文章列表</span>
+                </el-menu-item>
+
+                <el-menu-item index="/article/resources">
+                    <el-icon><User /></el-icon> <span>素材管理</span>
+                </el-menu-item>
+            </el-sub-menu>
+
+            <el-sub-menu index="PERMISSION">
                 <template #title>
                     <el-icon><User /></el-icon> <span>权限管理</span>
                 </template>
 
-                <el-menu-item index="/menus">
+                <el-menu-item index="/permission/menus">
                     <el-icon><User /></el-icon> <span>菜单列表</span>
                 </el-menu-item>
 
-                <el-menu-item index="/resources">
+                <el-menu-item index="/permission/resources">
                     <el-icon><User /></el-icon> <span>资源管理</span>
                 </el-menu-item>
 
-                <el-menu-item index="roles">
+                <el-menu-item index="/permission/roles">
                     <el-icon><User /></el-icon> <span>角色列表</span>
                 </el-menu-item>
             </el-sub-menu>
@@ -30,32 +49,43 @@
                 <el-icon><User /></el-icon> <span>用户管理</span>
             </el-menu-item>
 
-            <el-menu-item index="/systems">
-                <el-icon><User /></el-icon> <span>系统设置</span>
-            </el-menu-item>
 
-
-            <el-sub-menu index="2">
+            <el-sub-menu index="ADVERTISES">
                 <template #title>
                     <el-icon><User /></el-icon> <span>广告管理</span>
                 </template>
 
-                <el-menu-item index="advertises">
+                <el-menu-item index="/advertises/advertises">
                     <el-icon><User /></el-icon> <span>广告列表</span>
                 </el-menu-item>
 
-                <el-menu-item index="attachments">
+                <el-menu-item index="/advertises/attachments">
                     <el-icon><Crop /></el-icon> <span>素材管理</span>
                 </el-menu-item>
             </el-sub-menu>
+
+            <el-sub-menu index="SYSTEM">
+                <template #title>
+                    <el-icon><User /></el-icon> <span>系统设置</span>
+                </template>
+
+                <el-menu-item index="/system/properties">
+                    <el-icon><User /></el-icon> <span>全局属性</span>
+                </el-menu-item>
+            </el-sub-menu>
+
+
+            <el-menu-item index="/about">
+                <el-icon><User /></el-icon> <span>关于我们</span>
+            </el-menu-item>
         </el-menu>
     </el-aside>
 </template>
 
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
     .el-aside {
-        backgroud-color: #eee;
+        background-color: #eee;
 
         /* 这样就设置了元素的高度为视口高度的 100% */
         height: 100vh;
@@ -83,6 +113,10 @@
                 img {
                     width: 32px;
                     height: 32px;
+                }
+
+                :hover{
+                    filter: drop-shadow(0 0 2rem rgb(255, 0, 8));
                 }
             }
         }

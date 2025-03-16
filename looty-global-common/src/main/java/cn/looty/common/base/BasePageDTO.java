@@ -1,5 +1,6 @@
 package cn.looty.common.base;
 
+import cn.looty.common.constant.Constants;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -16,8 +17,8 @@ import java.io.Serializable;
 public class BasePageDTO implements Serializable {
     private static final long serialVersionUID = -1;
     @ApiModelProperty(name = "页码", notes = "默认为1")
-    private Integer pageNo = 1;
+    private Integer pageNo = Constants.PAGE_NO;
 
     @ApiModelProperty(name = "分页大小", notes = "默认为10")
-    private Integer pageSize = 10;
+    private Integer pageSize = Constants.PAGE_SIZE;
 }

@@ -6,15 +6,6 @@
             <Fold v-show="!sidebar.hide"/>
         </el-icon>
 
-        <!--面包屑-->
-        <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-            <el-breadcrumb-item>
-                <a href="/">promotion management</a>
-            </el-breadcrumb-item>
-            <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-            <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
-        </el-breadcrumb>
 
         <!--下拉菜单-->
         <el-dropdown>
@@ -42,7 +33,7 @@
     }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
     $ly-header-back-color: #eeeeee;
 
     .el-header{
@@ -50,14 +41,14 @@
         align-items: center;
         background-color: $ly-header-back-color;
 
-        .el-breadcrumb{
-            margin-left: 20px;
-        }
-
         .el-dropdown{
             margin-left: auto;
             .el-avatar{
                 background-color: $ly-header-back-color;
+            }
+
+            :hover{
+                filter: drop-shadow(0 0 2em rgba(142, 210, 255, 0.67));
             }
         }
     }

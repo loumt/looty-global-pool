@@ -1,7 +1,7 @@
 package cn.looty.srv.user.model;
 
 import cn.looty.common.base.BaseModel;
-import cn.looty.common.enums.PermissionClientType;
+import cn.looty.common.enums.ClientType;
 import cn.looty.common.enums.PermissionType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -22,7 +22,7 @@ import lombok.Data;
 public class SysPermission extends BaseModel {
     @ApiModelProperty("端")
     @TableField
-    private PermissionClientType clientType;
+    private ClientType clientType;
 
     @ApiModelProperty("类型")
     @TableField
@@ -34,7 +34,7 @@ public class SysPermission extends BaseModel {
 
     @ApiModelProperty("权限")
     @TableField
-    private String permission;
+    private String code;
 
     @ApiModelProperty("描述")
     @TableField

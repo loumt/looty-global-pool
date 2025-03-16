@@ -1,6 +1,7 @@
 package cn.looty.srv.user.model;
 
 import cn.looty.common.base.BaseModel;
+import cn.looty.common.enums.ClientType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -18,6 +19,10 @@ import lombok.Data;
 @TableName("sys_role")
 @ApiModel(description = "角色")
 public class SysRole extends BaseModel {
+    @ApiModelProperty("端")
+    @TableField
+    private ClientType clientType;
+
     @ApiModelProperty("名称")
     @TableField
     private String name;

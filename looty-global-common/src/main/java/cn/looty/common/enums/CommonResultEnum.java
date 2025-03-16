@@ -11,8 +11,9 @@ import cn.looty.common.base.BaseResultEnum;
  */
 public enum CommonResultEnum implements BaseResultEnum {
     SUCCESS(100000, "成功"),
-    FAILURE(500000, "系统错误"),
-
+    FAILURE(200000, "失败"),
+    PARAM_ILLEGAL(300000, "参数异常"),
+    ERROR(500000, "系统错误"),
     NOT_FOUND(400000, "未找到资源"),
     NO_PERMISSION(400001, "无权限"),
 

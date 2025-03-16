@@ -1,6 +1,7 @@
 package cn.looty.srv.user.model;
 
 import cn.looty.common.base.BaseModel;
+import cn.looty.common.enums.ClientType;
 import cn.looty.common.enums.YesOrNo;
 import cn.looty.srv.user.service.ISysUserService;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -42,7 +43,19 @@ public class SysUser extends BaseModel {
     @Size(min = 1, max = 16, groups = {ISysUserService.save.class})
     private String password;
 
+    @ApiModelProperty("密码盐")
+    @TableField
+    private String salt;
+
     @ApiModelProperty("是否禁用")
     @TableField
     private YesOrNo isDisable;
+
+    @ApiModelProperty("端")
+    @TableField
+    private ClientType clientType;
+
+    @ApiModelProperty("是否为超级管理员")
+    @TableField
+    private YesOrNo isSuper;
 }

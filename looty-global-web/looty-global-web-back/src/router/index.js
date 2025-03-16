@@ -1,5 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import Layout from '@/layout'
+import AppLayout from '@/layout'
+import about from '@/views/about'
 
 /**
  * Note: 路由配置项
@@ -25,13 +26,67 @@ import Layout from '@/layout'
 
 export const constantRoutes = [
     {
-        path: '',
-        component: Layout
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/login')
+    },
+    {
+        path: '/',
+        name: 'home',
+        component: AppLayout,
+        children: [
+            {
+                path:'/index',
+                component: ()=> import('@/views/index')
+            },
+            {
+                path:'/about',
+                component: ()=> import('@/views/about')
+            },
+            {
+                path: '/permission/menus',
+                component: ()=> import('@/views/permission/menus')
+            },
+            {
+                path: '/permission/resources',
+                component: ()=> import('@/views/permission/resources')
+            },
+            {
+                path: '/permission/roles',
+                component: ()=> import('@/views/permission/roles')
+            },
+            {
+                path: '/advertises/advertises',
+                component: ()=> import('@/views/advertises/advertises')
+            },
+            {
+                path: '/advertises/attachments',
+                component: ()=> import('@/views/advertises/attachments')
+            },
+            {
+                path: '/system/properties',
+                component: ()=> import('@/views/system/properties')
+            },
+            {
+                path: '/article/article',
+                component: ()=> import('@/views/article/article')
+            },
+            {
+                path: '/article/resources',
+                component: ()=> import('@/views/article/resources')
+            },
+            {
+                path: '/:xxx(.*)*',
+                name: 'error',
+                component: ()=> import('@/views/error')
+            }
+        ]
     },
     {
         path: '/users',
         component: () => import('@/views/login')
-    }
+    },
+
 ]
 
 const router = createRouter({

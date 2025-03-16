@@ -33,4 +33,14 @@ public class Constants
      * HTTPS
      */
     public static final String HTTPS = "https://";
+
+    /**
+     * 页码
+     */
+    public static final Integer PAGE_NO =1;
+
+    /**
+     * 页大小
+     */
+    public static final Integer PAGE_SIZE = 10;
 }

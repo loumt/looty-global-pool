@@ -5,7 +5,11 @@
             <AppAside/>
             <el-container class="ly-main-container">
                 <AppHeader/>
-                <el-main>Main</el-main>
+                <el-main>
+                    <el-scrollbar>
+                        <RouterView/>
+                    </el-scrollbar>
+                </el-main>
             </el-container>
         </el-container>
     </div>
@@ -16,8 +20,9 @@
     import AppHeader from "./components/AppHeader"
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
     .ly-main-container{
         flex-direction: column;
     }
+
 </style>
